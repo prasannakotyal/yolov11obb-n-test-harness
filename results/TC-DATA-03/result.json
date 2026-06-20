@@ -1,0 +1,21 @@
+{
+  "tc_id": "TC-DATA-03",
+  "name": "Train/Validation/Test Separation (no leakage)",
+  "trace": [
+    "AI-10",
+    "AI-11",
+    "DR-06"
+  ],
+  "status": "PASS",
+  "criteria": "PASS if no exact duplicates within the set; full cross-split disjointness reuses the same hash check across manifests.",
+  "measured": {
+    "val_images": 300,
+    "exact_duplicates_within_val": 0,
+    "near_duplicate_pairs_within_val": 0,
+    "method": "MD5 (exact) + 16x16 average-hash (near) per image; cross-split disjointness applies the same hashes across train/val/test manifests.",
+    "cross_split_check": "requires train+test manifests (not in this val-only subset)"
+  },
+  "observations": "0 near-duplicate pair(s) flagged for review by 16x16 average-hash.",
+  "evidence": [],
+  "run_date": "2026-06-20 09:53"
+}

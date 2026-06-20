@@ -1,0 +1,14 @@
+# environments
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# ultralytics run artifacts and exported engines
+runs/
+*.engine
+*.onnx
+**/*.cache
+
+# generated at runtime (machine-specific absolute paths)
+results/dataset.yaml

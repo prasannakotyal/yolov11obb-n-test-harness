@@ -1,0 +1,13 @@
+{
+  "baseline_total": 1138,
+  "per_transform_retention": {
+    "hflip": 0.997,
+    "vflip": 0.99,
+    "rot90": 1.019,
+    "rot180": 1.029,
+    "rot270": 0.993,
+    "brighten": 0.996,
+    "darken": 0.989,
+    "zoom_out": 0.834
+  }
+}

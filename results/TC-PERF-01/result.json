@@ -1,0 +1,104 @@
+{
+  "tc_id": "TC-PERF-01",
+  "name": "Per-Class Detection Accuracy (mAP / precision / recall)",
+  "trace": [
+    "PR-04",
+    "PR-08",
+    "FR-17",
+    "AI-08"
+  ],
+  "status": "MEASURED",
+  "criteria": "Acceptance: each class meets its SRD per-class thresholds at IoU 0.5. The harness reports measured values.",
+  "measured": {
+    "images": 300,
+    "iou_for_mAP50": 0.5,
+    "overall": {
+      "mAP50": 0.6176,
+      "mAP50_95": 0.4667,
+      "mean_precision": 0.8087,
+      "mean_recall": 0.5805
+    },
+    "per_class": {
+      "plane": {
+        "mAP50": 0.7427,
+        "precision": 0.9346,
+        "recall": 0.7028
+      },
+      "ship": {
+        "mAP50": 0.7287,
+        "precision": 0.9108,
+        "recall": 0.7056
+      },
+      "storage tank": {
+        "mAP50": 0.5861,
+        "precision": 0.9408,
+        "recall": 0.5066
+      },
+      "baseball diamond": {
+        "mAP50": 0.6953,
+        "precision": 0.7976,
+        "recall": 0.6583
+      },
+      "tennis court": {
+        "mAP50": 0.9538,
+        "precision": 0.9699,
+        "recall": 0.9528
+      },
+      "basketball court": {
+        "mAP50": 0.6534,
+        "precision": 0.8308,
+        "recall": 0.5758
+      },
+      "ground track field": {
+        "mAP50": 0.58,
+        "precision": 0.6873,
+        "recall": 0.5321
+      },
+      "harbor": {
+        "mAP50": 0.8112,
+        "precision": 0.8346,
+        "recall": 0.7961
+      },
+      "bridge": {
+        "mAP50": 0.3036,
+        "precision": 0.699,
+        "recall": 0.2389
+      },
+      "large vehicle": {
+        "mAP50": 0.8579,
+        "precision": 0.8814,
+        "recall": 0.8504
+      },
+      "small vehicle": {
+        "mAP50": 0.6867,
+        "precision": 0.7032,
+        "recall": 0.6397
+      },
+      "helicopter": {
+        "mAP50": 0.4961,
+        "precision": 0.8136,
+        "recall": 0.4561
+      },
+      "roundabout": {
+        "mAP50": 0.2837,
+        "precision": 0.6827,
+        "recall": 0.2388
+      },
+      "soccer ball field": {
+        "mAP50": 0.3988,
+        "precision": 0.6663,
+        "recall": 0.3647
+      },
+      "swimming pool": {
+        "mAP50": 0.4854,
+        "precision": 0.7784,
+        "recall": 0.4894
+      }
+    }
+  },
+  "observations": "Mechanism (model.val mAP/precision/recall) demonstrated; pass/fail is set against the SRD per-class table.",
+  "evidence": [
+    "TC-PERF-01/accuracy.json"
+  ],
+  "run_date": "2026-06-20 09:59"
+}

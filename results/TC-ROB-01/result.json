@@ -1,0 +1,29 @@
+{
+  "tc_id": "TC-ROB-01",
+  "name": "Image-Corruption Robustness (Invariance)",
+  "trace": [
+    "AI-01",
+    "AI-05",
+    "PR-04"
+  ],
+  "status": "PASS",
+  "criteria": "PASS if mean detection retention at severity 1 >= 0.7 (TBC) with graceful degradation thereafter.",
+  "measured": {
+    "images": 40,
+    "corruption_types": 15,
+    "severities": 5,
+    "severity_1_mean_retention": 0.948,
+    "severity_2_mean_retention": 0.868,
+    "severity_3_mean_retention": 0.749,
+    "severity_4_mean_retention": 0.601,
+    "severity_5_mean_retention": 0.483,
+    "worst_corruption_at_sev1": {
+      "blur/zoom_blur": 0.547
+    }
+  },
+  "observations": "Full 15x5 retention table in retention.json. Acceptance retention thresholds are TBC.",
+  "evidence": [
+    "TC-ROB-01/retention.json"
+  ],
+  "run_date": "2026-06-20 09:59"
+}

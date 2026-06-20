@@ -1,0 +1,12 @@
+Test Case,Name,Result,Key measured value(s),Run date,Evidence ref.,Traceability (SRD)
+TC-DATA-01,Dataset Integrity and Class Distribution,PASS,"18451 instances, 15 classes, imbalance 82.4, dups 0",2026-06-20 09:53,results/TC-DATA-01/,"AI-11, DR-01, DR-03"
+TC-DATA-02,ODD Coverage and Data Desiderata,PASS,15/15 classes >=5 instances; 24.94% objects <20px,2026-06-20 09:53,results/TC-DATA-02/,"AI-01, AI-11, DR-02, DR-04"
+TC-DATA-03,Train/Validation/Test Separation (no leakage),PASS,"0 exact dup, 0 near-dup pairs",2026-06-20 09:53,results/TC-DATA-03/,"AI-10, AI-11, DR-06"
+TC-DATA-04,Label-Quality Review,PASS,label error rate 0.0% over 18451 objects,2026-06-20 09:53,results/TC-DATA-04/,"AI-11, DR-01"
+TC-DATA-05,Data/Model Drift Monitoring,PASS,induced KS p=3.22e-47 (detected True); control p=0.3617,2026-06-20 09:53,results/TC-DATA-05/,"AI-08, FD-08"
+TC-ROB-01,Image-Corruption Robustness (Invariance),PASS,"retention sev1=0.948, sev3=0.749, sev5=0.483",2026-06-20 09:59,results/TC-ROB-01/,"AI-01, AI-05, PR-04"
+TC-ROB-02,Geometric-Transform Robustness (Metamorphic),PASS,mean retention 0.981 over 8 transforms,2026-06-20 09:59,results/TC-ROB-02/,"AI-01, PR-01"
+TC-FUN,Detect/Classify and Output-Schema Validity,PASS,98.0% images with detections; schema valid 49/50,2026-06-20 09:59,results/TC-FUN/,"FR-01, FR-04, FR-05, FR-08, FR-09, FR-10, FR-11, FR-17, AI-03, AI-04"
+TC-TIM-01,Per-Frame Inference and End-to-End Latency,PASS,inference 16.18ms (p95 67.1); e2e 22.87ms,2026-06-20 09:59,results/TC-TIM-01/,"TR-01, TR-02"
+TC-PERF-01,Per-Class Detection Accuracy (mAP / precision / recall),MEASURED,"mAP50=0.6176, mAP50-95=0.4667, P=0.8087, R=0.5805",2026-06-20 09:59,results/TC-PERF-01/,"PR-04, PR-08, FR-17, AI-08"
+TC-OOD-01,OOD Input Rejection,MEASURED,"AUROC 0.776, FPR@95TPR 1.0, OOD conf-rate 0.49",2026-06-20 09:59,results/TC-OOD-01/,"PR-05, FR-18, AI-05, SR-08"

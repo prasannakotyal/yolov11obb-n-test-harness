@@ -1,0 +1,23 @@
+[project]
+name = "obb-verification-harness"
+version = "1.0.0"
+description = "Generic black-box verification harness for an oriented-bounding-box object detector: data-management and model-validation test cases in SVCP format."
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "ultralytics>=8.3.0",
+    "opencv-python-headless>=4.9",
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "scipy>=1.11",
+    "scikit-image>=0.22",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: end-to-end test that loads the model under test"]
+
+[tool.ruff]
+line-length = 120

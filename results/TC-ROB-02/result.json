@@ -1,0 +1,30 @@
+{
+  "tc_id": "TC-ROB-02",
+  "name": "Geometric-Transform Robustness (Metamorphic)",
+  "trace": [
+    "AI-01",
+    "PR-01"
+  ],
+  "status": "PASS",
+  "criteria": "PASS if realistic transforms preserve detections (mean retention >= 0.7, TBC).",
+  "measured": {
+    "images": 40,
+    "transforms": 8,
+    "mean_retention": 0.981,
+    "per_transform": {
+      "hflip": 0.997,
+      "vflip": 0.99,
+      "rot90": 1.019,
+      "rot180": 1.029,
+      "rot270": 0.993,
+      "brighten": 0.996,
+      "darken": 0.989,
+      "zoom_out": 0.834
+    }
+  },
+  "observations": "Stage-1 realistic transforms; zoom-in onto target-free regions is not required to flag.",
+  "evidence": [
+    "TC-ROB-02/geometric.json"
+  ],
+  "run_date": "2026-06-20 09:59"
+}
