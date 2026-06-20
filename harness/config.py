@@ -16,9 +16,7 @@ RESULTS = ROOT / "results"
 MODEL_PATH = MODELS / "yolo11n-obb.pt"  # model under test (auto-downloaded if absent)
 VAL_IMAGES = DATA / "images" / "val"
 VAL_LABELS = DATA / "labels" / "val"
-DATASET_YAML = (
-    RESULTS / "dataset.yaml"
-)  # generated at runtime with portable absolute paths
+DATASET_YAML = RESULTS / "dataset.yaml"  # generated at runtime with portable absolute paths
 
 # Fixed inference configuration (the verification baseline).
 IMGSZ = 1024
@@ -61,8 +59,6 @@ E2E_BUDGET_MS = 100.0  # end-to-end budget
 MAX_LABEL_ERROR_PCT = 1.0  # max acceptable label error rate (TC-DATA-04)
 DRIFT_ALPHA = 0.05  # KS p-value threshold for drift detection (TC-DATA-05)
 ROB_MIN_RETENTION = 0.70  # min mean detection retention (TC-ROB-01 sev1 / TC-ROB-02)
-OOD_MIN_AUROC = 0.80  # min OOD AUROC (TC-OOD-01)
-OOD_MAX_CONFIDENT_RATE = 0.20  # max confident-detection rate on OOD inputs (TC-OOD-01)
 
 # Sample sizes for the model-dependent sweeps (kept modest for a 4 GB GPU).
 ROB_IMAGES = 40

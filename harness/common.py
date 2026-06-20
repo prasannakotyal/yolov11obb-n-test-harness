@@ -1,4 +1,4 @@
-"""Model access, image IO, and SVCP-format result recording.
+"""Model access and image IO.
 
 This is the only module coupled to the model and the filesystem; the
 verification maths lives in metrics.py and corruptions.py.
@@ -6,7 +6,6 @@ verification maths lives in metrics.py and corruptions.py.
 
 from __future__ import annotations
 
-import datetime
 import hashlib
 import json
 import random
@@ -16,7 +15,6 @@ import cv2
 import numpy as np
 
 from . import config as C
-from . import traceability
 
 _MODEL = None
 
@@ -105,39 +103,6 @@ def md5(path, chunk: int = 1 << 20) -> str:
         for block in iter(lambda: f.read(chunk), b""):
             h.update(block)
     return h.hexdigest()
-
-
-def now() -> str:
-    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-
-
-# ----------------------------------------------------------------- result recording
-_RESULTS: list[dict] = []
-
-
-def record(tc_id, name, status, criteria, measured: dict, observations="", evidence=None):
-    """Record one test-case result and persist its evidence JSON under results/<tc_id>/."""
-    row = {
-        "tc_id": tc_id,
-        "name": name,
-        "trace": traceability.trace_for(tc_id),
-        "status": status,
-        "criteria": criteria,
-        "measured": measured,
-        "observations": observations,
-        "evidence": evidence or [],
-        "run_date": now(),
-    }
-    case_dir = C.RESULTS / tc_id
-    case_dir.mkdir(parents=True, exist_ok=True)
-    (case_dir / "result.json").write_text(json.dumps(row, indent=2))
-    _RESULTS.append(row)
-    print(f"  [{status}] {tc_id}  {name}")
-    return row
-
-
-def results() -> list[dict]:
-    return _RESULTS
 
 
 def save_json(obj, path):

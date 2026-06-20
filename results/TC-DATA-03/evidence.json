@@ -1,0 +1,6 @@
+{
+  "val_images": 300,
+  "exact_duplicates_within_val": 0,
+  "near_duplicate_pairs_within_val": 0,
+  "method": "MD5 (exact) + 16x16 average-hash (near) per image; cross-split disjointness applies the same hashes across train/val/test manifests."
+}

@@ -1,0 +1,10 @@
+{
+  "images_timed": 150,
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "inference_ms_mean": 15.02,
+  "inference_ms_p95": 62.7,
+  "end_to_end_ms_mean": 21.66,
+  "end_to_end_ms_p95": 67.21,
+  "infer_budget_ms": 50.0,
+  "e2e_budget_ms": 100.0
+}

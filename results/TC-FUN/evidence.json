@@ -1,0 +1,7 @@
+{
+  "images": 50,
+  "images_with_detections": 49,
+  "schema_valid_images": 49,
+  "schema_violations": 0,
+  "detection_rate_pct": 98.0
+}

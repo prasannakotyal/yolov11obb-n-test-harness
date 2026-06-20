@@ -17,7 +17,7 @@ dev = ["pytest>=8.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["slow: end-to-end test that loads the model under test"]
+markers = ["tc(id): the SVCP test case an atomic test belongs to"]
 
 [tool.ruff]
 line-length = 120

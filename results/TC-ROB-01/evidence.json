@@ -1,5 +1,15 @@
 {
+  "images": 40,
+  "corruption_types": 15,
+  "severities": 5,
   "baseline_total_detections": 1138,
+  "severity_mean_retention": {
+    "1": 0.946,
+    "2": 0.867,
+    "3": 0.748,
+    "4": 0.606,
+    "5": 0.483
+  },
   "per_corruption_retention": {
     "noise/gaussian_noise": {
       "1": 0.932,
@@ -16,11 +26,11 @@
       "5": 0.0
     },
     "noise/impulse_noise": {
-      "1": 1.257,
-      "2": 1.24,
-      "3": 0.864,
-      "4": 0.274,
-      "5": 0.08
+      "1": 1.236,
+      "2": 1.232,
+      "3": 0.852,
+      "4": 0.34,
+      "5": 0.073
     },
     "blur/defocus_blur": {
       "1": 0.967,
@@ -106,12 +116,5 @@
       "4": 0.838,
       "5": 0.755
     }
-  },
-  "severity_summary": {
-    "severity_1_mean_retention": 0.948,
-    "severity_2_mean_retention": 0.868,
-    "severity_3_mean_retention": 0.749,
-    "severity_4_mean_retention": 0.601,
-    "severity_5_mean_retention": 0.483
   }
 }

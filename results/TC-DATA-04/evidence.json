@@ -1,0 +1,8 @@
+{
+  "labels_reviewed": 300,
+  "objects": 18451,
+  "malformed_lines": 0,
+  "degenerate_polygons": 0,
+  "out_of_range_coords": 0,
+  "label_error_rate_pct": 0.0
+}

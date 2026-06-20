@@ -1,5 +1,8 @@
 {
-  "baseline_total": 1138,
+  "images": 40,
+  "transforms": 8,
+  "baseline_total_detections": 1138,
+  "mean_retention": 0.981,
   "per_transform_retention": {
     "hflip": 0.997,
     "vflip": 0.99,
