@@ -13,10 +13,15 @@ weights or gradients. White-box gradient attacks (FGSM/PGD) are intentionally ou
 
 ## Requirements
 - Python 3.10-3.12 and [`uv`](https://docs.astral.sh/uv/)
+- [Git LFS](https://git-lfs.com) - the model and dataset are stored via LFS
 - An NVIDIA GPU is optional (the harness falls back to CPU; latency numbers are device-dependent)
 
 ## Quickstart
 ```bash
+git lfs install                     # the model + dataset are in Git LFS; install it before cloning
+git clone git@github.com:prasannakotyal/yolov11obb-n-test-harness.git
+cd yolov11obb-n-test-harness
+
 uv venv .venv
 uv pip install -e ".[dev]"          # harness + pytest
 
@@ -24,8 +29,8 @@ uv run python run_harness.py        # run all cases  -> results/
 uv run pytest -m "not slow"         # fast unit tests (no model/GPU), ~1 s
 uv run pytest                       # also the slow end-to-end case (loads the model)
 ```
-For GPU inference, install the torch build matching your CUDA (torch is otherwise pulled in
-by ultralytics).
+If you cloned before installing Git LFS, run `git lfs pull` to fetch the real files. For GPU
+inference, install the torch build matching your CUDA (torch is otherwise pulled in by ultralytics).
 
 ## Layout
 ```
@@ -120,5 +125,6 @@ against the SRD acceptance values once confirmed.
 - Randomised cases (`TC-ROB`, `TC-OOD`) are seeded (`config.SEED`) for reproducibility but may
   shift slightly across GPU/driver versions.
 
-> The repo ships the model (`models/`, ~6 MB) and the validation subset (`data/`, ~215 MB) so the
-> harness runs out-of-the-box. For lighter clones, move these to Git LFS or host them separately.
+> The model (`models/`, ~6 MB) and the validation subset (`data/`, ~215 MB) are tracked with
+> **Git LFS** so the harness runs out-of-the-box. Install Git LFS before cloning (`git lfs install`);
+> if you already cloned without it, run `git lfs pull`.
